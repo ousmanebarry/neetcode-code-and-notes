@@ -21,7 +21,16 @@ def solution_one(s: str, t: str) -> bool:
 
 
 def solution_two(s: str, t: str) -> bool:
-    return True
+    if len(s) != len(t):
+        return False
+
+    countS, countT = {}, {}
+
+    for i in range(len(s)):
+        countS[s[i]] = 1 + countS.get(s[i], 0)
+        countT[t[i]] = 1 + countT.get(t[i], 0)
+
+    return countS == countT
 
 
 sol1 = solution_one(s_word, t_word)
@@ -29,4 +38,5 @@ sol2 = solution_two(s_word, t_word)
 
 print(sol1)
 print(sol2)
+
 
