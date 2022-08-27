@@ -33,10 +33,20 @@ def solution_two(s: str, t: str) -> bool:
     return countS == countT
 
 
+def solution_three(s: str, t: str) -> bool:
+
+    if len(s) != len(t):
+        return False
+
+    s_sorted, t_sorted = sorted(s), sorted(t)
+
+    return s_sorted == t_sorted
+
+
 sol1 = solution_one(s_word, t_word)
 sol2 = solution_two(s_word, t_word)
+sol3 = solution_three(s_word, t_word)
 
 print(sol1)
 print(sol2)
-
-
+print(sol3)
