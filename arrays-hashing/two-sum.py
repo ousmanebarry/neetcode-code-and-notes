@@ -2,7 +2,8 @@
 # video solution : https://youtu.be/KLlXCFG5TnA
 # code solution : https://github.com/neetcode-gh/leetcode/blob/main/python/1-Two-Sum.py
 
-numbers = []
+numbers = [2, 7, 11, 15]
+target_num = 9
 
 
 def solution(nums: list[int], target: int) -> list[int]:
@@ -10,6 +11,11 @@ def solution(nums: list[int], target: int) -> list[int]:
 
     for i, n in enumerate(nums):
         diff = target - n
-        if target in prevMap:
+        if diff in prevMap:
             return [prevMap[diff], i]
         prevMap[n] = i
+
+
+sol = solution(numbers, target_num)
+
+print(sol)
